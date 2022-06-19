@@ -6,18 +6,22 @@ namespace TodoApp.Tests;
 [TestClass]
 public class CreteToDoCommandTests
 {
+    private readonly CreateToDoCommand _invalidCommand = new CreateToDoCommand("", System.DateTime.Now, "");
+    private readonly CreateToDoCommand _validCommand = new CreateToDoCommand("", System.DateTime.Now, "");
+
+    public CreteToDoCommandTests()
+    {
+        _invalidCommand.Validate();
+        _validCommand.Validate();
+    }
     [TestMethod]
     public void Dado_um_commando_invalido()
     {
-        var command = new CreateToDoCommand("", System.DateTime.Now, "");
-        command.Validate();
-        Assert.AreEqual(command.Valid, false);
+        Assert.AreEqual(_invalidCommand.Valid, false);
     }
     [TestMethod]
     public void Dado_um_commando_valido()
     {
-        var command = new CreateToDoCommand("Comprar projétil 9mm jaquetado", System.DateTime.Now, "osmarditto@isaclube.com");
-        command.Validate();
-        Assert.AreEqual(command.Valid, true);
+        Assert.AreEqual(_validCommand.Valid, true);
     }
 }
