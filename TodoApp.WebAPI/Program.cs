@@ -25,6 +25,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 
-var command = new CreateTodoCommand("Comprar munição NTA 9mm.", new DateTime(2022, 04, 02), "zecaloteiro");
+var command = new CreateToDoCommand("Comprar munição NTA 9mm.", new DateTime(2022, 04, 02), "zecaloteiro");
 
 app.Run();

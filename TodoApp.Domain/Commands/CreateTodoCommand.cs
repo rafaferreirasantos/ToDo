@@ -3,14 +3,14 @@ using Flunt.Notifications;
 using TodoApp.Domain.Commands.Contracts;
 
 namespace TodoApp.Domain.Commands;
-public class CreateTodoCommand : Notifiable, ICommand
+public class CreateToDoCommand : Notifiable, ICommand
 {
     public string? Title { get; set; }
     public DateTime Date { get; set; }
     public string? User { get; set; }
 
-    public CreateTodoCommand() { }
-    public CreateTodoCommand(string title, DateTime date, string user)
+    public CreateToDoCommand() { }
+    public CreateToDoCommand(string title, DateTime date, string user)
     {
         Title = title;
         Date = date;
