@@ -1,13 +1,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TodoApp.Domain.Commands;
 
-namespace TodoApp.Tests;
+namespace TodoApp.Tests.CommandTests;
 
 [TestClass]
 public class CreteToDoCommandTests
 {
     private readonly CreateToDoCommand _invalidCommand = new CreateToDoCommand("", System.DateTime.Now, "");
-    private readonly CreateToDoCommand _validCommand = new CreateToDoCommand("", System.DateTime.Now, "");
+    private readonly CreateToDoCommand _validCommand = new CreateToDoCommand("Valida To Do Command", System.DateTime.Now, "validUserName");
 
     public CreteToDoCommandTests()
     {
